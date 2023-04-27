@@ -3,14 +3,14 @@ import Navbar from "./Navbar";
 
 function Header() {
   return (
-    <div className="bg-gray-800 flex items-center">
+    <div className=" bg-black flex items-center">
       <Image
-        src="/logo.png"
+        src="/bv_logo_red.png"
         alt="Picture of the author"
         width={64}
         height={64}
       />
-      <div className="m-auto">This is Template</div>
+      <div className="m-auto text-white">This is Template</div>
       <Navbar />
     </div>
   );
