@@ -22,10 +22,6 @@ const PostsPage = ({ posts }: { posts: any }) => {
 export default function Home() {
   const [posts, setPosts] = useState<any[]>([]);
   useEffect(() => {
-    console.log(
-      process.env.NEXT_PUBLIC_USERNAME,
-      process.env.NEXT_PUBLIC_ACCESS_TOKEN
-    );
     const getPosts = async () => {
       const posts = await mediumAPI.getPosts();
       setPosts(posts);
@@ -72,9 +68,6 @@ export default function Home() {
       <div>
         <div>최근 블로그</div>
         <div>medium api 따서 올리기</div>
-        <div>
-          <PostsPage posts={posts} />
-        </div>
       </div>
     </main>
   );

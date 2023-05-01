@@ -4,7 +4,7 @@ const nextConfig = {
     return [
       {
         source: "/proxy/:path*",
-        destination: "https://api.medium.com/v1/users/:path*",
+        destination: "https://v1.nocodeapi.com/:path*",
       },
     ];
   },
