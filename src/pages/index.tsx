@@ -1,46 +1,37 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import mediumAPI from "./api/medium";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const MEDIUM_USER_ID = "blockchain-valley";
-const MEDIUM_API_URL = `https://medium.com/@${MEDIUM_USER_ID}/latest?format=json`;
-
-const getMediumPosts = async () => {
-  const res = await fetch(MEDIUM_API_URL);
-  const json = await res.text();
-  const posts = JSON.parse(json.slice(16)).payload.posts;
-
-  return posts;
-};
-
-const getStaticProps = async () => {
-  const posts = await getMediumPosts();
-
-  return {
-    props: { posts },
-    revalidate: 60 * 60, // 한 시간마다 데이터를 재생성합니다.
-  };
-};
-
 const PostsPage = ({ posts }: { posts: any }) => {
   return (
-    <ul>
+    <div>
       {posts.map((post: any) => (
-        <li key={post.id}>
-          <a href={`https://medium.com/p/${post.uniqueSlug}`}>{post.title}</a>
-        </li>
+        <div key={post.id}>
+          <h2>{post.title}</h2>
+          <p>{post.content.subtitle}</p>
+          <p>Reactions: {post.virtuals.totalClapCount}</p>
+        </div>
       ))}
-    </ul>
+    </div>
   );
 };
 
 export default function Home() {
+  const [posts, setPosts] = useState<any[]>([]);
   useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://platform.twitter.com/widgets.js";
-    document.body.appendChild(script);
+    console.log(
+      process.env.NEXT_PUBLIC_USERNAME,
+      process.env.NEXT_PUBLIC_ACCESS_TOKEN
+    );
+    const getPosts = async () => {
+      const posts = await mediumAPI.getPosts();
+      setPosts(posts);
+    };
+
+    getPosts();
   }, []);
 
   return (
