@@ -1,17 +1,18 @@
 import React, { useEffect, useRef, useState } from "react";
 //import { CSSTransition } from "react-transition-group";
 
-const Wrapper = "flex flex-col items-center";
-const Timeline = "h-70vh w-3 shadow-boxBlue";
-const Circle = "w-30 h-30 text-darkblue rounded-full mx-5";
-const CircleWrapper = "relative";
-const MessageR =
-  "absolute left-full top-0 font-bold text-lg w-96 transition-all duration-200 ease-in-out";
-const MessageL =
-  "absolute right-56 top-0 font-bold text-lg w-96 transition-all duration-800 ease-in-out";
-const DetailMessage = "leading-10 text-white text-shadow-boxBlueLight";
-
 function JoinAnimation() {
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  const updateScroll = () => {
+    setScrollPosition(window.scrollY || document.documentElement.scrollTop);
+    console.log(window.scrollY || document.documentElement.scrollTop);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", updateScroll);
+  }, []);
+
   const [message1, setMessage1] = useState("");
   const [message2, setMessage2] = useState("");
   const [message3, setMessage3] = useState("");
@@ -53,47 +54,15 @@ function JoinAnimation() {
   }, []);
 
   return (
-    <div className={Wrapper}>
-      <div className={Timeline} id="timeline1" ref={timeline1} />
-      <div className={CircleWrapper}>
-        <div className={Circle} id="circle1" ref={circle1}></div>
-        <div className={MessageR}>
-          {/* <CSSTransition
-          unmountOnExit
-          timeout={400}
-          classNames="moveR"
-          in={message1}
-        > */}
-          <div className={DetailMessage}>{message1}</div>
-        </div>
-      </div>
-
-      <div className={Timeline} id="timeline1" ref={timeline1} />
-      <div className={CircleWrapper}>
-        <div className={Circle} id="circle1" ref={circle1}></div>
-        <div className={MessageR}>
-          {/* <CSSTransition
-          unmountOnExit
-          timeout={400}
-          classNames="moveR"
-          in={message1}
-        > */}
-          <div className={DetailMessage}>{message2}</div>
-        </div>
-      </div>
-
-      <div className={Timeline} id="timeline1" ref={timeline1} />
-      <div className={CircleWrapper}>
-        <div className={Circle} id="circle1" ref={circle1}></div>
-        <div className={MessageR}>
-          {/* <CSSTransition
-          unmountOnExit
-          timeout={400}
-          classNames="moveR"
-          in={message1}
-        > */}
-          <div className={DetailMessage}>{message3}</div>
-        </div>
+    <div className="flex h-[1000px] justify-center items-center">
+      <div
+        className={`${
+          scrollPosition > 100
+            ? " transition delay-150 text-red-500"
+            : "transition delay-150 text-stone-400 "
+        }`}
+      >
+        스크롤되면 색이 변합니다!
       </div>
     </div>
   );

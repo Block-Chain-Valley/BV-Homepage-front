@@ -20,13 +20,16 @@ const PostsPage = ({ posts }: { posts: any }) => {
 };
 
 export default function Home() {
-  const [posts, setPosts] = useState<any[]>([]);
-  useEffect(() => {
-    const getPosts = async () => {
+  const getPosts = async () => {
+    try {
       const posts = await mediumAPI.getPosts();
       setPosts(posts);
-    };
-
+    } catch (error) {
+      // 에러 처리 코드 추가
+    }
+  };
+  const [posts, setPosts] = useState<any[]>([]);
+  useEffect(() => {
     getPosts();
   }, []);
 

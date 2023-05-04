@@ -19,7 +19,7 @@ const mediumAPI = {
 
     // console.log(username, access_token);
     const response = await mediumAxois.get(
-      `blockchainvalley/medium/iGHBJrSHzrblTmgy`,
+      `blockchainvalley/medium/${process.env.NEXT_PUBLIC_NOCODE_USERNAME}`,
 
       {
         withCredentials: true,
