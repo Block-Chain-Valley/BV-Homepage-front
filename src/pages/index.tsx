@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import { useEffect, useState } from "react";
 import mediumAPI from "./api/medium";
+import useScrollFadeIn from "../hooks/useScrollFadeIn";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,6 +21,7 @@ const PostsPage = ({ posts }: { posts: any }) => {
 };
 
 export default function Home() {
+  const animatedItem = useScrollFadeIn("up", 1, 0);
   const getPosts = async () => {
     try {
       const posts = await mediumAPI.getPosts();
@@ -71,6 +73,18 @@ export default function Home() {
       <div>
         <div>최근 블로그</div>
         <div>medium api 따서 올리기</div>
+      </div>
+      <div>
+        <div className="flex flex-col justify-center items-center h-[1000px]">
+          <div {...animatedItem}>
+            <Image
+              src="/bv_logo_red.png"
+              alt="Picture of the author"
+              width={500}
+              height={500}
+            />
+          </div>
+        </div>
       </div>
     </main>
   );
