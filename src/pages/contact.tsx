@@ -1,3 +1,5 @@
+import EmailBox from "@/components/Contact/EmailBox";
+
 function Contact() {
   return (
     <div>
@@ -9,6 +11,7 @@ function Contact() {
       <div>010-8940-7209</div>
       <div>서울특별시 성북구 고려대로 24길 56 4층</div>
       <div>blockchainvalley.kor@gmail.com</div>
+      <EmailBox />
     </div>
   );
 }

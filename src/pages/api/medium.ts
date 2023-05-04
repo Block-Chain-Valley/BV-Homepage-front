@@ -1,5 +1,11 @@
 import axios from "axios";
 
+type MediumPost = {
+  title: string;
+  link: string;
+  imgSrc: string;
+};
+
 const PROXY = "/proxy";
 
 const mediumAxois = axios.create({
@@ -12,12 +18,14 @@ const mediumAxois = axios.create({
   withCredentials: true,
 });
 
+const extractFirstImgLink = (str: string): string | null => {
+  const imgTagRegex = /<img.+?src=["'](.+?)["']/;
+  const match = str.match(imgTagRegex);
+  return match ? match[1] : null;
+};
+
 const mediumAPI = {
   getPosts: async () => {
-    // const username = process.env.NEXT_PUBLIC_USERNAME;
-    // const access_token = process.env.NEXT_PUBLIC_ACCESS_TOKEN;
-
-    // console.log(username, access_token);
     const response = await mediumAxois.get(
       `blockchainvalley/medium/${process.env.NEXT_PUBLIC_NOCODE_USERNAME}`,
 
@@ -25,9 +33,17 @@ const mediumAPI = {
         withCredentials: true,
       }
     );
-    console.log(response.data);
 
-    return response.data;
+    const posts: MediumPost[] = response.data.map((post: any) => {
+      return {
+        title: post.title,
+        link: post.link,
+        imgSrc: extractFirstImgLink(post.content),
+      };
+    });
+    console.log(posts);
+
+    return posts;
   },
 };
 

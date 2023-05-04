@@ -4,8 +4,6 @@ import { useEffect, useState } from "react";
 import mediumAPI from "./api/medium";
 import useScrollFadeIn from "../hooks/useScrollFadeIn";
 
-const inter = Inter({ subsets: ["latin"] });
-
 const PostsPage = ({ posts }: { posts: any }) => {
   return (
     <div>
@@ -36,7 +34,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="bg-black text-white">
+    <main className="bg-black text-white animate-fadeIn">
       <div>다가올 WEB 3.0의 미래를 함께 만들어나갈 혁신가들의 공간</div>
       <div>
         <div>Our vision</div>

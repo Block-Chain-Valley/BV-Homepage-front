@@ -1,9 +1,21 @@
-import { useRef, useEffect, useCallback } from "react";
+import { useRef, useEffect, useCallback, MutableRefObject } from "react";
 
-const useScrollFadeIn = (direction, duration, delay) => {
-  const element = useRef();
+type AnimatedItemProps = {
+  ref: MutableRefObject<HTMLDivElement | null>;
+  style: {
+    opacity: number;
+    transform: string | undefined;
+  };
+};
 
-  const handleDirection = (name) => {
+const useScrollFadeIn = (
+  direction: string,
+  duration: number,
+  delay: number
+): AnimatedItemProps => {
+  const element = useRef<HTMLDivElement>(null);
+
+  const handleDirection = (name: string) => {
     switch (name) {
       case "up":
         return "translate3d(0, 50%, 0)";
@@ -19,14 +31,14 @@ const useScrollFadeIn = (direction, duration, delay) => {
   };
 
   const handleScroll = useCallback(
-    ([entry]) => {
+    ([entry]: any[]) => {
       const { current } = element;
-      if (entry.isIntersecting) {
+      if (current && entry.isIntersecting) {
         current.style.transitionProperty = "all";
         current.style.transitionDuration = `${duration}s`;
         current.style.transitionTimingFunction = "cubic-bezier(0, 0, 0.2, 1)";
         current.style.transitionDelay = `${delay}s`;
-        current.style.opacity = 1;
+        current.style.opacity = "1";
         current.style.transform = "translate3d(0, 0, 0)";
       }
     },
@@ -34,7 +46,7 @@ const useScrollFadeIn = (direction, duration, delay) => {
   );
 
   useEffect(() => {
-    let observer;
+    let observer: any;
     const { current } = element;
 
     if (current) {
