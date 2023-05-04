@@ -54,13 +54,34 @@ function JoinAnimation() {
   }, []);
 
   return (
-    <div className="flex h-[1000px] justify-center items-center">
+    <div className="flex flex-col  justify-center items-center">
       <div
         className={`${
           scrollPosition > 100
-            ? " transition delay-150 text-red-500"
-            : "transition delay-150 text-stone-400 "
-        }`}
+            ? " transition delay-150 text-red-500 "
+            : "transition delay-150 text-white"
+        }
+        flex flex-col  justify-center items-center h-[500px]`}
+      >
+        스크롤되면 색이 변합니다!
+      </div>
+      <div
+        className={`${
+          scrollPosition > 500
+            ? " transition delay-150 text-red-500 "
+            : "transition delay-150 text-white"
+        }
+        flex flex-col  justify-center items-center h-[500px]`}
+      >
+        스크롤되면 색이 변합니다!
+      </div>
+      <div
+        className={`${
+          scrollPosition > 1000
+            ? " transition delay-150 text-red-500 "
+            : "transition delay-150 text-white"
+        }
+        flex flex-col  justify-center items-center h-[500px]`}
       >
         스크롤되면 색이 변합니다!
       </div>

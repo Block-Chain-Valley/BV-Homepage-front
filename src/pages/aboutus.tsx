@@ -1,3 +1,4 @@
+import AboutTeams from "@/components/Aboutus/AboutTeams";
 import DetailCarousel from "@/components/common/DetailCarousel";
 
 function AboutUs() {
@@ -26,6 +27,7 @@ function AboutUs() {
         </div>
       </main>
       <DetailCarousel />
+      <AboutTeams />
     </>
   );
 }
