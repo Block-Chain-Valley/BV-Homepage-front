@@ -43,32 +43,41 @@ const EmailBox = () => {
   };
 
   return (
-    <form ref={form} onSubmit={sendEmail}>
-      <label htmlFor="name">Name</label>
-      <input
-        type="lineText"
-        id="name"
-        name="user_name"
-        value={name}
-        onChange={onChangeName}
-      />
-      <label htmlFor="email">Email</label>
-      <input
-        type="email"
-        id="email"
-        name="user_email"
-        value={email}
-        onChange={onChangeEmail}
-      />
-      <label htmlFor="message">Message</label>
-      <textarea
-        id="lineText"
-        name="lineText"
-        value={lineText}
-        onChange={onChangeLineText}
-      />
-      <input type="submit" name="Send" value="Send" />
-    </form>
+    <div className="flex">
+      <form ref={form} onSubmit={sendEmail}>
+        <div className="flex">
+          <label htmlFor="name" className=" text-xl ">
+            Name
+          </label>
+
+          <input
+            type="lineText"
+            id="name"
+            name="user_name"
+            value={name}
+            onChange={onChangeName}
+          />
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="user_email"
+            value={email}
+            onChange={onChangeEmail}
+          />
+        </div>
+        <div className="flex flex-col">
+          <label htmlFor="message">Message</label>
+          <textarea
+            id="lineText"
+            name="lineText"
+            value={lineText}
+            onChange={onChangeLineText}
+          />
+        </div>
+        <input type="submit" name="Send" value="Send" />
+      </form>
+    </div>
   );
 };
 
