@@ -44,9 +44,13 @@ const EmailBox = () => {
 
   return (
     <div className="flex">
-      <form ref={form} onSubmit={sendEmail}>
+      <form
+        ref={form}
+        onSubmit={sendEmail}
+        className="flex flex-col items-center"
+      >
         <div className="flex">
-          <label htmlFor="name" className=" text-xl ">
+          <label htmlFor="name" className=" text-xl font-bold mr-2 ">
             Name
           </label>
 
@@ -56,26 +60,40 @@ const EmailBox = () => {
             name="user_name"
             value={name}
             onChange={onChangeName}
+            className=" w-20 border-2 border-black rounded-md mr-2 text-black"
           />
-          <label htmlFor="email">Email</label>
+
+          <label htmlFor="email" className=" text-xl font-bold mr-2 ">
+            Email
+          </label>
+
           <input
             type="email"
             id="email"
             name="user_email"
             value={email}
             onChange={onChangeEmail}
+            className="border-2 border-black rounded-md text-black"
           />
         </div>
         <div className="flex flex-col">
-          <label htmlFor="message">Message</label>
+          <label htmlFor="message" className=" text-xl font-bold mt-2 ">
+            Message
+          </label>
           <textarea
             id="lineText"
             name="lineText"
             value={lineText}
             onChange={onChangeLineText}
+            className="border-2 border-black rounded-md text-black w-80  h-40"
           />
         </div>
-        <input type="submit" name="Send" value="Send" />
+        <input
+          type="submit"
+          name="Send"
+          value="Send"
+          className="border-2 mt-5 border-white w-20 h-10 rounded-md bg-black text-white"
+        />
       </form>
     </div>
   );
