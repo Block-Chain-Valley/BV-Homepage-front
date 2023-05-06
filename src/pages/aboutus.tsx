@@ -2,6 +2,15 @@ import AboutTeams from "@/components/Aboutus/AboutTeams";
 import DetailCarousel from "@/components/common/DetailCarousel";
 import { SEO } from "@/seo/SEO";
 
+const images = [
+  "/bv_logo_red.png",
+  "/bv_logo_red.png",
+  "/bv_logo_red.png",
+  "/bv_logo_red.png",
+  "/bv_logo_red.png",
+  "/bv_logo_red.png",
+];
+
 function AboutUs() {
   return (
     <>
@@ -37,7 +46,7 @@ function AboutUs() {
         <div className="flex flex-col m-20">
           <h1 className="text-xl">Lounge</h1>
         </div>
-        <DetailCarousel />
+        <DetailCarousel images={images} />
       </main>
     </>
   );
