@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import mediumAPI from "./api/medium";
 import useScrollFadeIn from "../hooks/useScrollFadeIn";
 import { SEO } from "@/seo/SEO";
-
+import DetailCarousel from "@/components/common/DetailCarousel";
 
 const PostsPage = ({ posts }: { posts: any }) => {
   return (
@@ -22,13 +22,21 @@ const PostsPage = ({ posts }: { posts: any }) => {
 
 export default function Home() {
   const animatedItem = useScrollFadeIn("up", 1, 0);
-  const [post, setPost] = useState<any[]>([]); //썸네일
+  const [post, setPost] = useState<any[]>([]);
+  const [postImages, setPostImages] = useState<string[]>([]);
+  const [postTitles, setPostTitles] = useState<string[]>([]);
+  const [postUrls, setPostUrls] = useState<string[]>([]);
+
 
   const getPosts = async () => {
     try {
       const posts = await mediumAPI.getPosts();
       setPost(posts);
-      console.log(posts[0])
+      setPostImages(posts.map((post) => post.imgSrc));
+      setPostTitles(posts.map((post) => post.title));
+      setPostUrls(posts.map((post) => post.link));
+      console.log(postImages);
+
     } catch (error) {
       // 에러 처리 코드 추가
       console.log(error);
@@ -48,61 +56,22 @@ export default function Home() {
 블록체인밸리(Blockchain Valley)는 고려대학교를 기반으로 활동하는 블록체인 학회입니다."
       />
       <div className=" h-screen w-screen bg-cover bg-center flex justify-center items-center"
-        style={{ backgroundImage: "url('/backgroundImg.png')" }}>
-        <div className="animate-fadeIn text-center text-3xl font-semibold leading-relaxed">다가올 WEB 3.0의 미래를 <br></br>  함께 만들어 나갈 혁신가들의 공간</div>
+        style={{ backgroundImage: "url('/backgroundImg.png')" ,height: "80vh"}}>
+        <div className="animate-fadeIn text-center text-4xl font-semibold leading-relaxed">다가올 WEB 3.0의 미래를 <br></br>  함께 만들어 나갈 혁신가들의 공간</div>
       </div>
-      <div className="text-2xl p-4">Medium</div>
+      <div className="text-3xl p-4">Medium</div>
       <div className="p-10">
-        {post.map((post, index) => (
-          <div key={index}>
-            <h2>{post.title}</h2>
-            {/* <p>{post.link}</p> */}
-            <img className='h-300 w-200' src={post.imgSrc} alt="Post image" />
-          </div>
-        ))}
-
+        <DetailCarousel images={postImages} title={postTitles} url = {postUrls}/> 
       </div>
-
-
     </main>
   );
 }
 
+{/* {post.map((post, index) => (
+          <div key={index}> */}
+{/* <p>{post.link}</p> */ }
 
-{/* <div>
-              블록체인밸리(Blockchain Valley)는 고려대학교를 기반으로 활동하는
-              블록체인 학회입니다. 블록체인밸리는 WEB3의 진정한 가치를 학습하는
-              공간이자, 블록체인을 통해 자신의 미래를 위해 준비를 하는 공간이 되길
-              희망합니다. “블록체인”이라는 키워드에서 뻗어, 자유롭게 생각을 나누고
-              대화를 하며 가치있는 네트워크의 형성을 꿈꿉니다.
-            </div> */}
-            // </div>
-            // <div>
-            //   <div>Our activities</div>
-            //   <div>
-            //     현재 18명의 리서치팀과 19명의 개발팀으로 구성되어 있으며, 총 37명이
-            //     노드로 활동하고 있습니다.
-            //   </div>
-            // </div>
-            // <div>
-            //   <div>Join us</div>
-            //   <div>
-            //     우리는 혼자 할 수 없고,함께해야만 할 수 있다는 것을 확신합니다.
-            //   </div>
-            //   <div>
-            //     WEB 3.0이라는 거대한 물결에 함께 올라탈 예비 노드 여러분의 지원을
-            //     기다립니다.
-            //   </div>
-            //   <button>지원하기</button>
-          //   <div>
-          //   <div className="flex flex-col justify-center items-center h-[1000px]">
-          //     <div {...animatedItem}>
-          //       <Image
-          //         src="/bv_logo_red.png"
-          //         alt="Picture of the author"
-          //         width={500}
-          //         height={500}
-          //       />
-          //     </div>
-          //   </div>
-          // </div>
+{/* <img className='h-300 w-200' src={post.imgSrc} alt="Post image" /> */ }
+{/* <h2 className="p-10 text-2xl">{post.title}</h2> */ }
+{/* </div>
+        ))} */}

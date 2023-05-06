@@ -22,14 +22,14 @@ interface SwiperProps {
   };
 }
 
-export default function App({ images }: { images: string[] }) {
+export default function App({ images, title, url }: { images: string[], title: string[], url: string[] }) {
   const swiperStyle: SwiperProps["style"] = {
     width: "100%",
     height: "100%",
     backgroundColor: "black",
     color: "white",
     "--swiper-pagination-color": "red",
-    "--swiper-pagination-bullet-inactive-color": "green",
+    "--swiper-pagination-bullet-inactive-color": "white",
     "--swiper-pagination-bullet-inactive-opacity": "0.5",
     "--swiper-pagination-bullet-size": "10px",
     "--swiper-pagination-bullet-horizontal-gap": "5px",
@@ -53,12 +53,17 @@ export default function App({ images }: { images: string[] }) {
             style={{ display: "flex", backgroundColor: "black" }}
             className="flex justify-center items-center mb-8 bg-black"
           >
-            <Image
-              src="/bv_logo_red.png"
-              alt="Picture of the author"
-              width={128}
-              height={128}
-            />
+            <a href={url[index]}>
+              <Image
+                src={image}
+                alt="Picture of the author"
+                width={128}
+                height={128}
+              />
+
+            </a>
+
+            <div>{title}</div>
           </SwiperSlide>
         ))}
       </Swiper>
