@@ -1,10 +1,15 @@
 import AboutTeams from "@/components/Aboutus/AboutTeams";
 import DetailCarousel from "@/components/common/DetailCarousel";
+import { SEO } from "@/seo/SEO";
 
 function AboutUs() {
   return (
     <>
       <main className="flex flex-col items-center justify-center ">
+        <SEO
+          title="회사 소개 페이지"
+          description="당사에 대한 소개를 확인할 수 있는 페이지입니다."
+        />
         <div>다가올 WEB 3.0의 미래를 함께 만들어나갈 혁신가들의 공간</div>
 
         <div>

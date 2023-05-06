@@ -1,8 +1,13 @@
 import EmailBox from "@/components/Contact/EmailBox";
+import { SEO } from "@/seo/SEO";
 
 function Contact() {
   return (
     <div>
+      <SEO
+        title="문의 페이지"
+        description="문의 사항을 보낼 수 있는 페이지입니다."
+      />
       <div>Contact</div>
       <div>
         WEB3의 진정한 가치를 학습하는 공간 블록체인밸리입니다. 블록체인밸리와의

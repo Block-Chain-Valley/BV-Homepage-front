@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import { useEffect, useState } from "react";
 import mediumAPI from "./api/medium";
 import useScrollFadeIn from "../hooks/useScrollFadeIn";
+import { SEO } from "@/seo/SEO";
 
 
 const PostsPage = ({ posts }: { posts: any }) => {
@@ -36,6 +37,11 @@ export default function Home() {
 
   return (
     <main className="bg-black text-white animate-fadeIn ">
+    <SEO
+        title="Blockchain Valley"
+        description="WEB 3.0의 진정한 가치를 학습하는 공간, 자신의 미래를 위해 준비를 하는 공간.
+블록체인밸리(Blockchain Valley)는 고려대학교를 기반으로 활동하는 블록체인 학회입니다."
+      />
           <div className="animate-fadeIn h-screen w-screen bg-cover bg-center"
     style={{ backgroundImage: "url('/backgroundImg.png')" }}>
         <div className="text-center text-3xl">다가올 WEB 3.0의 미래를 함께 만들어나갈 <br></br> 혁신가들의 공간</div>
