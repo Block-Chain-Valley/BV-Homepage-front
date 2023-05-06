@@ -7,7 +7,7 @@ function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const router = useRouter();
   const activated = (path: string) => {
-    return router.pathname === path ? "bg-50" : "text-gray-200";
+    return router.pathname === path ? "text-white font-bold" : "text-white";
   };
 
   return (
@@ -26,22 +26,22 @@ function Navbar() {
           </svg>
         </button>
       </div>
-      <div className={`flex md:flex  ${mobileMenuOpen ? "block" : "hidden"}`}>
-        <div className="flex flex-col md:flex-row max-md:fixed max-md:w-20 max-md:bg-gray-800 max-md:top-16 max-md:right-0  max-md:items-center max-md:justify-center ">
+      <div className={`flex text-lg pr-2 md:flex  ${mobileMenuOpen ? "block" : "hidden"}`}>
+        <div className="flex flex-col md:flex-row max-md:fixed max-md:w-20 max-md:bg-black max-md:top-16 max-md:right-0  max-md:items-center max-md:justify-center ">
           <Link
             href="/"
             className={`flex md:inline-block md:mt-0 ${activated(
               "/"
-            )} hover:text-white  m-2`}
+            )} hover: m-2`}
             onClick={() => setMobileMenuOpen(false)}
           >
             Home
           </Link>
           <Link
             href="/aboutus"
-            className={`flex md:inline-block md:mt-0 ${activated(
+            className={`flex md:inline-block md:mt-0  ${activated(
               "/aboutus"
-            )} hover:text-white  m-2`}
+            )} hover:  m-2 `}
             onClick={() => setMobileMenuOpen(false)}
           >
             About
@@ -50,7 +50,7 @@ function Navbar() {
             href="/contact"
             className={`flex md:inline-block md:mt-0 ${activated(
               "/contact"
-            )} hover:text-white  m-2`}
+            )} hover: m-2`}
             onClick={() => setMobileMenuOpen(false)}
           >
             Contact
@@ -59,7 +59,7 @@ function Navbar() {
             href="/joinus"
             className={`flex md:inline-block md:mt-0 ${activated(
               "/joinus"
-            )} hover:text-white  m-2`}
+            )} hover:  m-2`}
             onClick={() => setMobileMenuOpen(false)}
           >
             Join Us

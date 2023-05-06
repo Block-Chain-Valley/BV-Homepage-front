@@ -46,7 +46,7 @@ function AboutUs() {
         <div className="flex flex-col m-20">
           <h1 className="text-xl">Lounge</h1>
         </div>
-        <DetailCarousel images={images} />
+        {/* <DetailCarousel images={images} /> */}
       </main>
     </>
   );
