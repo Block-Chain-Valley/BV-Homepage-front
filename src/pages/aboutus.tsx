@@ -5,7 +5,7 @@ import { SEO } from "@/seo/SEO";
 function AboutUs() {
   return (
     <>
-      <main className="flex flex-col items-center justify-center ">
+      <main className="flex flex-col items-center justify-center bg-black text-white ">
         <SEO
           title="회사 소개 페이지"
           description="당사에 대한 소개를 확인할 수 있는 페이지입니다."
@@ -27,12 +27,12 @@ function AboutUs() {
           </div>
         </div>
 
+        <AboutTeams />
         <div className="flex flex-row">
           <div>Lounge</div>
         </div>
       </main>
       <DetailCarousel />
-      <AboutTeams />
     </>
   );
 }
