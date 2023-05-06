@@ -20,7 +20,30 @@ const images = [
   "/bv_logo_red.png",
 ];
 
+interface SwiperProps {
+  // Define other props here
+  style?: React.CSSProperties & {
+    "--swiper-pagination-color"?: string;
+    "--swiper-pagination-bullet-inactive-color"?: string;
+    "--swiper-pagination-bullet-inactive-opacity"?: string;
+    "--swiper-pagination-bullet-size"?: string;
+    "--swiper-pagination-bullet-horizontal-gap"?: string;
+  };
+}
+
 export default function App() {
+  const swiperStyle: SwiperProps["style"] = {
+    width: "100%",
+    height: "100%",
+    backgroundColor: "black",
+    color: "white",
+    "--swiper-pagination-color": "red",
+    "--swiper-pagination-bullet-inactive-color": "green",
+    "--swiper-pagination-bullet-inactive-opacity": "0.5",
+    "--swiper-pagination-bullet-size": "10px",
+    "--swiper-pagination-bullet-horizontal-gap": "5px",
+  };
+
   return (
     <>
       <Swiper
@@ -31,12 +54,13 @@ export default function App() {
         }}
         modules={[Pagination]}
         className="mySwiper "
+        style={swiperStyle}
       >
         {images.map((image, index) => (
           <SwiperSlide
             key={index}
-            style={{ display: "flex" }}
-            className="flex justify-center items-center mb-8"
+            style={{ display: "flex", backgroundColor: "black" }}
+            className="flex justify-center items-center mb-8 bg-black"
           >
             <Image
               src="/bv_logo_red.png"

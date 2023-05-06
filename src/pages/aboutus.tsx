@@ -5,14 +5,17 @@ import { SEO } from "@/seo/SEO";
 function AboutUs() {
   return (
     <>
-      <main className="flex flex-col items-center justify-center ">
+      <main className="flex flex-col items-center justify-center bg-black text-white ">
         <SEO
           title="회사 소개 페이지"
           description="당사에 대한 소개를 확인할 수 있는 페이지입니다."
         />
-        <div>다가올 WEB 3.0의 미래를 함께 만들어나갈 혁신가들의 공간</div>
+        <div className="m-20">
+          다가올 WEB 3.0의 미래를 함께 만들어나갈 혁신가들의 공간
+        </div>
 
-        <div>
+        <div className="flex flex-col m-20">
+          <h1 className="text-xl">Who we are</h1>
           <div>
             # 블록체인밸리(Blockchain Valley)는 고려대학교를 기반으로 활동하는
             블록체인 학회입니다.
@@ -26,13 +29,16 @@ function AboutUs() {
             나이, 소속, 출신에 제한 없이 누구나 함께 할 수 있습니다.
           </div>
         </div>
-
-        <div className="flex flex-row">
-          <div>Lounge</div>
+        <div className="flex flex-col m-20">
+          <h1 className="text-xl">About Teams</h1>
+          <AboutTeams />
         </div>
+
+        <div className="flex flex-col m-20">
+          <h1 className="text-xl">Lounge</h1>
+        </div>
+        <DetailCarousel />
       </main>
-      <DetailCarousel />
-      <AboutTeams />
     </>
   );
 }
