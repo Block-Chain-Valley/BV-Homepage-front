@@ -11,15 +11,6 @@ import "swiper/css/pagination";
 // import required modules
 import { Pagination } from "swiper";
 
-const images = [
-  "/bv_logo_red.png",
-  "/bv_logo_red.png",
-  "/bv_logo_red.png",
-  "/bv_logo_red.png",
-  "/bv_logo_red.png",
-  "/bv_logo_red.png",
-];
-
 interface SwiperProps {
   // Define other props here
   style?: React.CSSProperties & {
@@ -31,7 +22,7 @@ interface SwiperProps {
   };
 }
 
-export default function App() {
+export default function App({ images }: { images: string[] }) {
   const swiperStyle: SwiperProps["style"] = {
     width: "100%",
     height: "100%",

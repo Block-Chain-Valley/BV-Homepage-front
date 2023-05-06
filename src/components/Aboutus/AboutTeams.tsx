@@ -20,7 +20,7 @@ function AboutTeams() {
         {buttonContents.map((content, index) => (
           <button
             key={index}
-            className={`my-2 px-4 py-2 rounded ${
+            className={`m-12 px-4 py-2 rounded ${
               index === activeIndex ? "bg-blue-500 text-white" : "bg-gray-300"
             }`}
             onClick={() => handleClick(index)}
