@@ -4,13 +4,13 @@ import Link from "next/link";
 
 function Header() {
   return (
-    <div className=" bg-black flex items-center justify-between p-1">
+    <div className=" flex items-center justify-between p-1">
       <Link href="/">
           <Image
-            src="/bv_logo_redwhite.png"
+            src="/bv_logo_white.png"
             alt="Picture of the author"
-            width={150}
-            height={150}
+            width={200}
+            height={200}
           />
       </Link>
       <Navbar />

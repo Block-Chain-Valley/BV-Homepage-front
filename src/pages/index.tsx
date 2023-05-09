@@ -5,6 +5,9 @@ import mediumAPI from "./api/medium";
 import useScrollFadeIn from "../hooks/useScrollFadeIn";
 import { SEO } from "@/seo/SEO";
 import DetailCarousel from "@/components/common/DetailCarousel";
+import Header from "../components/Header";
+import Navbar from "../components/Navbar";
+import Link from "next/link";
 
 const PostsPage = ({ posts }: { posts: any }) => {
   return (
@@ -49,29 +52,44 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="bg-black text-white ">
+    <main className="bg-white text-white ">
       <SEO
         title="Blockchain Valley"
         description="WEB 3.0의 진정한 가치를 학습하는 공간, 자신의 미래를 위해 준비를 하는 공간.
 블록체인밸리(Blockchain Valley)는 고려대학교를 기반으로 활동하는 블록체인 학회입니다."
       />
-      <div className=" h-screen w-screen bg-cover bg-center flex justify-center items-center"
-        style={{ backgroundImage: "url('/backgroundImg.png')" ,height: "80vh"}}>
-        <div className="animate-fadeIn text-center text-4xl font-semibold leading-relaxed">다가올 WEB 3.0의 미래를 <br></br>  함께 만들어 나갈 혁신가들의 공간</div>
+      <div className="flex flex-col h-screen w-screen bg-cover bg-center justify-center items-center"
+        style={{ backgroundImage: "url('/bv_back.png')", height: "100vh" }}>
+        <div className="absolute top-5 left-5 w-full bg-none flex items-center justify-between p-5">
+          <Link href="/">
+            <Image
+              src="/bv_logo_white.png"
+              alt="Picture of the author"
+              width={230}
+              height={150}
+            />
+          </Link>
+          <Navbar />
+        </div>
+        {/* <div className="animate-fadeIn text-center text-6xl font-semibold leading-relaxed ">
+          Be Our Nodes</div> */}
+        <div className="animate-fadeIn text-center text-4xl leading-relaxed font-bold">
+          다가올 Web 3.0의 미래를 <br/>함께 만들어 나갈 혁신가들의 공간
+        </div>
+
       </div>
-      <div className="text-3xl p-4">Medium</div>
-      <div className="p-10">
-        <DetailCarousel images={postImages} title={postTitles} url = {postUrls}/> 
+      <div>
+        A
+      </div>
+      <div>
+        B
+      </div>
+      <div>
+        <div className="text-black text-3xl p-4">Medium</div>
+        <div className="p-10">
+          <DetailCarousel images={postImages} title={postTitles} url={postUrls} />
+        </div>
       </div>
     </main>
   );
 }
-
-{/* {post.map((post, index) => (
-          <div key={index}> */}
-{/* <p>{post.link}</p> */ }
-
-{/* <img className='h-300 w-200' src={post.imgSrc} alt="Post image" /> */ }
-{/* <h2 className="p-10 text-2xl">{post.title}</h2> */ }
-{/* </div>
-        ))} */}

@@ -3,6 +3,8 @@ import { SEO } from "@/seo/SEO";
 import { IoCall } from "react-icons/io5";
 import { HiLocationMarker } from "react-icons/hi";
 import { MdEmail } from "react-icons/md";
+import Navbar from "../components/Navbar";
+import Link from "next/link";
 
 function Contact() {
   return (
@@ -11,6 +13,17 @@ function Contact() {
         title="문의 페이지"
         description="문의 사항을 보낼 수 있는 페이지입니다."
       />
+      <div className="absolute top-5 left-5 w-full bg-none flex items-center justify-between p-5">
+        <Link href="/">
+          <img
+            src="/bv_logo_white.png"
+            alt="Picture of the author"
+            width={230}
+              height={150}
+          />
+        </Link>
+        <Navbar />
+      </div>
       <div className="flex flex-col m-20">
         <h1 className="text-7xl font-extrabold text-900 ">Contact</h1>
       </div>
