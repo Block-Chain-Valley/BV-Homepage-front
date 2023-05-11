@@ -43,13 +43,13 @@ const EmailBox = () => {
   };
 
   return (
-    <div className="flex">
+    <div className="flex items-center">
       <form
         ref={form}
         onSubmit={sendEmail}
         className="flex flex-col items-center"
       >
-        <div className="flex">
+        <div className="flex max-md:flex-col">
           <label htmlFor="name" className=" text-xl font-bold mr-2 ">
             Name
           </label>

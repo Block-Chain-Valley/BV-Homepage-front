@@ -38,7 +38,7 @@ function AboutUs() {
         description="블록체인 밸리는 고려대학교 유일의 블록체인 학회입니다. 블록체인과 크립토 그리고 WEB 3.0에 대한 관심과 열정이 있다면 블록체인 밸리의 노드가 될 수 있습니다."
       />
 
-      <div className="absolute top-5 left-5 w-full bg-none flex items-center justify-between p-5">
+      {/* <div className="absolute top-5 left-5 w-full bg-none flex items-center justify-between p-5">
         <Link href="/">
           <img
             src="/bv_logo_white.png"
@@ -48,7 +48,8 @@ function AboutUs() {
           />
         </Link>
         <Navbar />
-      </div>
+      </div> */}
+
 
       <div
         style={{
@@ -69,9 +70,11 @@ function AboutUs() {
           <div className="text-base text-lg ">
             블록체인 밸리는 WEB 3.0의 진정한 가치를 학습하는 공간이자, 블록체인을 통해 자신의 미래를 위한 준비를 하는 공간이 되기를 지향합니다.
             구성원(node) 간의 수평적 문화를 지향하며, 고려대학교 구성원 외에도 나이, 소속, 출신에 제한 없이 누구나 함께 할 수 있습니다. 블록체인과 크립토 그리고 WEB 3.0에 대한 관심과 열정이 있다면 블록체인 밸리의 노드가 될 수 있습니다.
+
           </div>
         </div>
       </div>
+
 
 
       <div className="w-full h-100">
@@ -84,6 +87,7 @@ function AboutUs() {
           <div className="bg-black p-10 text-white text-center flex-1 flex flex-col items-center">
             <img src="/ic_blockchain.png" alt="Icon" className="w-20 h-20 mb-8" />
             <span className="text-lg">Web 3.0의 진정한 가치를 학습하는 공간</span>
+
           </div>
 
           <div className="bg-black p-10 text-white text-center flex-1 flex flex-col items-center pb-20">
@@ -108,6 +112,7 @@ function AboutUs() {
             <li>고려대학교 주변 대학 소속 블록체인 학회들과의 연합 행사 주최</li>
             <li>타 학회 주관 세션 참여, KBW(Korea Blockchain Week) 등 컨퍼런스 참여</li>
             <li>고려대학교 블록체인 대학원과 함께 진행한 아이코어 사업에 통과, 미국 캘리포니아에서 창업 지원 교육을 이수</li>
+
           </div>
         </div>
 
