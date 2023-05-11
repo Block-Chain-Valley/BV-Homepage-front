@@ -1,90 +1,94 @@
 import React, { useEffect, useRef, useState } from "react";
 //import { CSSTransition } from "react-transition-group";
 
+const JoinText = ({
+  scrollPosition,
+  position,
+  text,
+}: {
+  scrollPosition: number;
+  position: number;
+  text: string;
+}) => {
+  return (
+    <div
+      className={`${
+        scrollPosition > position
+          ? " transition delay-150 text-red-500 "
+          : "transition delay-150 text-white"
+      }
+        mt-48 mr-12 ml-12 flex flex-col text-center text-4xl justify-center items-center h-[500px] text-shadow-50px rgba(6, 61, 285, 0.8)`}
+      style={{
+        textShadow: "0 0 100px rgba(255, 0, 0, 1.0)",
+      }}
+    >
+      {text}
+    </div>
+  );
+};
+
 function JoinAnimation() {
   const [scrollPosition, setScrollPosition] = useState(0);
 
   const updateScroll = () => {
     setScrollPosition(window.scrollY || document.documentElement.scrollTop);
-    console.log(window.scrollY || document.documentElement.scrollTop);
   };
 
   useEffect(() => {
     window.addEventListener("scroll", updateScroll);
   }, []);
 
-  const [message1, setMessage1] = useState("");
-  const [message2, setMessage2] = useState("");
-  const [message3, setMessage3] = useState("");
-  const [message4, setMessage4] = useState("");
-  const [message5, setMessage5] = useState("");
-
-  const timeline1 = useRef(null);
-  const timeline2 = useRef(null);
-  const timeline3 = useRef(null);
-  const timeline4 = useRef(null);
-  const timeline5 = useRef(null);
-  const circle1 = useRef(null);
-  const circle2 = useRef(null);
-  const circle3 = useRef(null);
-  const circle4 = useRef(null);
-  const circle5 = useRef(null);
-
-  const someCallback1 = () => {
-    setMessage1("블록체인의 진정한 가치 학습이라는 비전에 공감하는 사람");
-  };
-  const someCallback2 = () => {
-    setMessage2("1년 동안 함께 지속적으로 성장하고자 하는 사람");
-  };
-  const someCallback3 = () => {
-    setMessage3(
-      "매주 2번 3시간 씩 이루어지는 세션에 성실히 참여할 수 있는 사람"
-    );
-  };
-  const someCallback4 = () => {
-    setMessage4("실제로 가치가 있는 프로덕트를 만들고자 하는 개발팀");
-  };
-  const someCallback5 = () => {
-    setMessage5("자신만의 관점을 통해 블록체인을 분석하는 리서치팀");
-  };
-  useEffect(() => {
-    someCallback1();
-    someCallback2();
-    someCallback3();
-  }, []);
-
   return (
     <div className="flex flex-col  justify-center items-center">
       <div
         className={`${
-          scrollPosition > 100
+          scrollPosition > 30
             ? " transition delay-150 text-red-500 "
             : "transition delay-150 text-white"
         }
-        flex flex-col  justify-center items-center h-[500px]`}
+        mt-48 flex flex-col text-center text-4xl justify-center items-center h-[500px] text-shadow-50px rgba(6, 61, 285, 0.8)`}
+        style={{
+          textShadow: "0 0 100px rgba(255, 0, 0, 1.0)",
+        }}
       >
-        스크롤되면 색이 변합니다!
+        다가오는 WEB 3의 미래를
+        <br /> 블록체인 밸리에서
+        <br /> 함께 만들어갈 신입 node를
+        <br />
+        모집합니다!
       </div>
-      <div
-        className={`${
-          scrollPosition > 500
-            ? " transition delay-150 text-red-500 "
-            : "transition delay-150 text-white"
+
+      <JoinText
+        scrollPosition={scrollPosition}
+        position={500}
+        text={"블록체인의 진정한 가치 학습이라는 비전에 공감하는 사람"}
+      />
+
+      <JoinText
+        scrollPosition={scrollPosition}
+        position={1200}
+        text={" 1년 동안 함께 지속적으로 성장하고자 하는 사람 "}
+      />
+
+      <JoinText
+        scrollPosition={scrollPosition}
+        position={1800}
+        text={
+          "     매주 2번 3시간 씩 이루어지는 세션에 성실히 참여할 수 있는 사람"
         }
-        flex flex-col  justify-center items-center h-[500px]`}
-      >
-        스크롤되면 색이 변합니다!
-      </div>
-      <div
-        className={`${
-          scrollPosition > 1000
-            ? " transition delay-150 text-red-500 "
-            : "transition delay-150 text-white"
-        }
-        flex flex-col  justify-center items-center h-[500px]`}
-      >
-        스크롤되면 색이 변합니다!
-      </div>
+      />
+
+      <JoinText
+        scrollPosition={scrollPosition}
+        position={2800}
+        text={"  실제로 가치가 있는 프로덕트를 만들고자 하는 개발팀"}
+      />
+
+      <JoinText
+        scrollPosition={scrollPosition}
+        position={3600}
+        text={"  자신만의 관점을 통해 블록체인을 분석하는 리서치팀 "}
+      />
     </div>
   );
 }
