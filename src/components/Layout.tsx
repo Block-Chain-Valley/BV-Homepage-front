@@ -5,6 +5,7 @@ import Footer from "./Footer";
 function Layout({ children }: { children: ReactElement }) {
   return (
     <div>
+      <Header />
       <div>{children}</div>
       <Footer />
     </div>

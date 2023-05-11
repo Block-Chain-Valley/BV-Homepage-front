@@ -14,7 +14,7 @@ const JoinText = ({
     <div
       className={`${
         scrollPosition > position
-          ? " transition delay-150 text-red-500 "
+          ? " transition delay-150 text-red-800 "
           : "transition delay-150 text-white"
       }
         mt-48 mr-12 ml-12 flex flex-col text-center text-4xl justify-center items-center h-[500px] text-shadow-50px rgba(6, 61, 285, 0.8)`}

@@ -33,7 +33,7 @@ function AboutUs() {
         description="당사에 대한 소개를 확인할 수 있는 페이지입니다."
       />
 
-      <div className="absolute top-5 left-5 w-full bg-none flex items-center justify-between p-5">
+      {/* <div className="absolute top-5 left-5 w-full bg-none flex items-center justify-between p-5">
         <Link href="/">
           <img
             src="/bv_logo_white.png"
@@ -43,22 +43,26 @@ function AboutUs() {
           />
         </Link>
         <Navbar />
-      </div>
+      </div> */}
 
       <div>
         <div className=" m-10 text-left pt-80 text-5xl font-extrabold ">
-          블록체인 밸리는 <br /><span className="text-900">고려대학교 유일의 블록체인 학회</span>입니다
+          블록체인 밸리는 <br />
+          <span className="text-900">고려대학교 유일의 블록체인 학회</span>
+          입니다
         </div>
 
         <div className="flex-col text-left m-10" {...animatedItem[0]}>
           <div className="text-base ">
-            블록체인 밸리는 WEB 3.0의 진정한 가치를 학습하는 공간이자, 블록체인을 통해 자신의 미래를 위한 준비를 하는 공간이 되기를 지향합니다.
-            구성원(node) 간의 수평적 문화를 지향하며, 고려대학교 구성원 외에도
-            나이, 소속, 출신에 제한 없이 누구나 함께 할 수 있습니다. 블록체인과 크립토 그리고 WEB 3.0에 대한 관심과 열정이 있다면 블록체인 밸리의 노드가 될 수 있습니다.
+            블록체인 밸리는 WEB 3.0의 진정한 가치를 학습하는 공간이자,
+            블록체인을 통해 자신의 미래를 위한 준비를 하는 공간이 되기를
+            지향합니다. 구성원(node) 간의 수평적 문화를 지향하며, 고려대학교
+            구성원 외에도 나이, 소속, 출신에 제한 없이 누구나 함께 할 수
+            있습니다. 블록체인과 크립토 그리고 WEB 3.0에 대한 관심과 열정이
+            있다면 블록체인 밸리의 노드가 될 수 있습니다.
           </div>
         </div>
       </div>
-
 
       <div>
         <div className="flex flex-row h-500">
@@ -69,9 +73,7 @@ function AboutUs() {
             설명
           </div>
         </div>
-
       </div>
-
 
       <div className="h-screen flex items-center justify-center h-300 w-full">
         <div className="flex flex-row w-full h-full">

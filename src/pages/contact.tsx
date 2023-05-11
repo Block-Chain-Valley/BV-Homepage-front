@@ -14,7 +14,7 @@ function Contact() {
         title="문의 페이지"
         description="문의 사항을 보낼 수 있는 페이지입니다."
       />
-      <div className="absolute top-5 left-5 w-full bg-none flex items-center justify-between p-5">
+      {/* <div className="absolute top-5 left-5 w-full bg-none flex items-center justify-between p-5">
         <Link href="/">
           <Image
             src="/bv_logo_white.png"
@@ -24,7 +24,7 @@ function Contact() {
           />
         </Link>
         <Navbar />
-      </div>
+      </div> */}
 
       <div className="flex flex-col items-center  mt-24 w-full ">
         <div className="animate-fadeIn mt-24 text-4xl max-w-3xl font-bold text-800 max-md:text-2xl max-md:text-center max-md:max-w-xl ">

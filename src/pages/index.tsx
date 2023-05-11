@@ -30,7 +30,6 @@ export default function Home() {
   const [postTitles, setPostTitles] = useState<string[]>([]);
   const [postUrls, setPostUrls] = useState<string[]>([]);
 
-
   const getPosts = async () => {
     try {
       const posts = await mediumAPI.getPosts();
@@ -39,7 +38,6 @@ export default function Home() {
       setPostTitles(posts.map((post) => post.title));
       setPostUrls(posts.map((post) => post.link));
       console.log(postImages);
-
     } catch (error) {
       // 에러 처리 코드 추가
       console.log(error);
@@ -48,7 +46,6 @@ export default function Home() {
 
   useEffect(() => {
     getPosts();
-
   }, []);
 
   return (
@@ -58,36 +55,28 @@ export default function Home() {
         description="WEB 3.0의 진정한 가치를 학습하는 공간, 자신의 미래를 위해 준비를 하는 공간.
 블록체인밸리(Blockchain Valley)는 고려대학교를 기반으로 활동하는 블록체인 학회입니다."
       />
-      <div className="flex flex-col h-screen w-screen bg-cover bg-center justify-center items-center"
-        style={{ backgroundImage: "url('/bv_back.png')", height: "100vh" }}>
-        <div className="absolute top-5 left-5 w-full bg-none flex items-center justify-between p-5">
-          <Link href="/">
-            <Image
-              src="/bv_logo_white.png"
-              alt="Picture of the author"
-              width={230}
-              height={150}
-            />
-          </Link>
-          <Navbar />
-        </div>
+
+      <div
+        className="flex flex-col h-screen w-screen bg-cover bg-center justify-center items-center"
+        style={{ backgroundImage: "url('/bv_back.png')", height: "100vh" }}
+      >
         {/* <div className="animate-fadeIn text-center text-6xl font-semibold leading-relaxed ">
           Be Our Nodes</div> */}
         <div className="animate-fadeIn text-center text-4xl leading-relaxed font-bold">
-          다가올 Web 3.0의 미래를 <br/>함께 만들어 나갈 혁신가들의 공간
+          다가올 Web 3.0의 미래를 <br />
+          함께 만들어 나갈 혁신가들의 공간
         </div>
-
       </div>
-      <div>
-        A
-      </div>
-      <div>
-        B
-      </div>
+      <div>A</div>
+      <div>B</div>
       <div>
         <div className="text-black text-3xl p-4">Medium</div>
         <div className="p-10">
-          <DetailCarousel images={postImages} title={postTitles} url={postUrls} />
+          <DetailCarousel
+            images={postImages}
+            title={postTitles}
+            url={postUrls}
+          />
         </div>
       </div>
     </main>
