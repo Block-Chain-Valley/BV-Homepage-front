@@ -73,16 +73,9 @@ export default function Home() {
         </div>
         {/* <div className="animate-fadeIn text-center text-6xl font-semibold leading-relaxed ">
           Be Our Nodes</div> */}
-        <div className="animate-fadeIn text-center text-4xl leading-relaxed font-bold">
+<div className="animate-fadeIn text-center text-5xl leading-relaxed font-">
           다가올 Web 3.0의 미래를 <br/>함께 만들어 나갈 혁신가들의 공간
         </div>
-
-      </div>
-      <div>
-        A
-      </div>
-      <div>
-        B
       </div>
       <div>
         <div className="text-black text-3xl p-4">Medium</div>
