@@ -34,10 +34,10 @@ export default function App({
   const swiperStyle: SwiperProps["style"] = {
     width: "100%",
     height: "100%",
-    backgroundColor: "black",
-    color: "white",
+    backgroundColor: "white",
+    color: "black",
     "--swiper-pagination-color": "#991b1b",
-    "--swiper-pagination-bullet-inactive-color": "white",
+    "--swiper-pagination-bullet-inactive-color": "grey",
     "--swiper-pagination-bullet-inactive-opacity": "0.5",
     "--swiper-pagination-bullet-size": "10px",
     "--swiper-pagination-bullet-horizontal-gap": "5px",

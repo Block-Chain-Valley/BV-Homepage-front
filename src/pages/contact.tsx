@@ -8,8 +8,9 @@ function Contact() {
   return (
     <main className="flex flex-col  items-center justify-center bg-black text-white ">
       <SEO
-        title="문의 페이지"
-        description="문의 사항을 보낼 수 있는 페이지입니다."
+        title="Contact page"
+        description="블록체인밸리와의 파트너십 및 협력 혹은 요청 사항이 있으시다면
+    언제든지 편하게 연락주세요"
       />
       {/* <div className="absolute top-5 left-5 w-full bg-none flex items-center justify-between p-5">
         <Link href="/">
