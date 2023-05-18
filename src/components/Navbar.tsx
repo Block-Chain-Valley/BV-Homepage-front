@@ -12,7 +12,7 @@ function Navbar() {
 
   return (
     <header>
-      <div className="block md:hidden mr-10">
+      <div className="block md:hidden ">
         <button
           className="flex items-left px-4 py-2 border rounded text-white border-white hover:text-white hover:border-white"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -26,13 +26,17 @@ function Navbar() {
           </svg>
         </button>
       </div>
-      <div className={`flex text-lg pr-10 md:flex  ${mobileMenuOpen ? "block" : "hidden"}`}>
-        <div className="flex flex-col md:flex-row max-md:absolute max-md:w-20 max-md:bg-none max-md:top-20 max-md:right-10  max-md:items-center max-md:justify-center space-y-5 md:space-y-0 md:space-x-20">
+      <div
+        className={`flex text-lg pr-10 md:flex  ${
+          mobileMenuOpen ? "block" : "hidden"
+        }`}
+      >
+        <div className="flex flex-col md:flex-row max-md:absolute max-md:w-20 max-md:bg-none max-md:top-20 max-md:right-1  max-md:items-center max-md:justify-center space-y-5 md:space-y-0 md:space-x-20">
           <Link
             href="/"
             className={`flex md:inline-block md:mt-0 text-base ${activated(
               "/"
-            )} hover:text-white`}
+            )} hover:text-gray-400 text-white`}
             onClick={() => setMobileMenuOpen(false)}
           >
             Home
@@ -41,7 +45,7 @@ function Navbar() {
             href="/aboutus"
             className={`flex md:inline-block md:mt-0 text-base ${activated(
               "/aboutus"
-            )} hover:text-white`}
+            )} hover:text-gray-400 text-white`}
             onClick={() => setMobileMenuOpen(false)}
           >
             About Us
@@ -50,7 +54,7 @@ function Navbar() {
             href="/contact"
             className={`flex md:inline-block md:mt-0 text-base ${activated(
               "/contact"
-            )} hover:text-white`}
+            )} hover:text-gray-400 text-white`}
             onClick={() => setMobileMenuOpen(false)}
           >
             Contact
@@ -59,13 +63,12 @@ function Navbar() {
             href="/joinus"
             className={`flex md:inline-block md:mt-0 text-base ${activated(
               "/joinus"
-            )} hover:text-white`}
+            )} hover:text-gray-400 text-white`}
             onClick={() => setMobileMenuOpen(false)}
           >
             Join Us
           </Link>
         </div>
-
       </div>
     </header>
   );

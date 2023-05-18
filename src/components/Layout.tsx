@@ -4,7 +4,7 @@ import Footer from "./Footer";
 
 function Layout({ children }: { children: ReactElement }) {
   return (
-    <div>
+    <div className="flex flex-col  ">
       <Header />
       <div>{children}</div>
       <Footer />
