@@ -27,7 +27,7 @@ function Contact() {
         className="flex flex-col items-center  mt-24 w-full bg-cover bg-no-repeat bg-center"
         style={{ backgroundImage: "url('/contactback.jpg')", height: "100vh" }}
       >
-        <div className="animate-fadeIn mt-24 text-4xl max-w-3xl font-bold  max-md:text-2xl max-md:text-center max-md:max-w-xl ">
+        <div className="animate-fadeIn mt-24 text-4xl max-w-3xl font-bold max-md:mt-48  max-md:text-2xl max-md:text-center max-md:max-w-xl ">
           WEB3의 진정한 가치를 학습하는 공간
           <br />
           <span className="text-900">블록체인 밸리</span> 입니다
