@@ -43,10 +43,23 @@ export default function App({
     "--swiper-pagination-bullet-horizontal-gap": "5px",
   };
 
+  const isMobile = window.innerWidth <= 768; // Check if the device is mobile
+
+  const swiperParams = {
+    slidesPerView: isMobile ? "auto" : 3, // Show 1 slide on mobile, 3 slides on other devices
+    spaceBetween: 15,
+    pagination: {
+      clickable: true,
+    },
+    modules: [Pagination],
+    className: "mySwiper",
+    style: swiperStyle,
+  };
+
   return (
     <>
       <Swiper
-        slidesPerView="auto"
+        slidesPerView={isMobile ? "auto" : 3}
         spaceBetween={15}
         pagination={{
           clickable: true,
