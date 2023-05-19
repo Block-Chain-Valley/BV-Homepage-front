@@ -46,7 +46,7 @@ export default function App({
   return (
     <>
       <Swiper
-        slidesPerView={3}
+        slidesPerView="auto"
         spaceBetween={15}
         pagination={{
           clickable: true,
@@ -71,7 +71,7 @@ export default function App({
                 />
               </a>
 
-              <div className="max-md:hidden mt-4 text-center font-semibold">
+              <div className=" mt-4 text-center font-semibold">
                 {title[index]}
               </div>
             </div>
