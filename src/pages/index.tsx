@@ -49,7 +49,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="bg-white text-white ">
+    <main className="bg-white text-white">
       <SEO
         title="Blockchain Valley"
         description="WEB 3.0의 진정한 가치를 학습하는 공간, 자신의 미래를 위해 준비를 하는 공간.

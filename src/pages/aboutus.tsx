@@ -78,11 +78,11 @@ function AboutUs() {
       </div>
 
       <div className="w-full h-100">
-        <div className="bg-black h-100 text-white text-center p-20 text-4xl font-extrabold">
+        <div className="bg-white h-100 text-black text-center p-10 text-4xl font-extrabold">
           <span>Mission & Vision</span>
         </div>
         <div className="flex">
-          <div className="bg-black p-10 text-white text-center flex-1 flex flex-col items-center">
+          <div className="bg-white p-5 text-black text-center flex-1 flex flex-col items-center">
             <img
               src="/ic_blockchain.png"
               alt="Icon"
@@ -93,8 +93,8 @@ function AboutUs() {
             </span>
           </div>
 
-          <div className="bg-black p-10 text-white text-center flex-1 flex flex-col items-center pb-20">
-            <img src="/ic_mission.png" alt="Icon" className="w-20 h-20 mb-8" />
+          <div className="bg-white p-5 text-black text-center flex-1 flex flex-col items-center pb-20">
+            <img src="/ic_network.png" alt="Icon" className="w-20 h-20 mb-8" />
             <span className="text-lg">
               Web 3.0를 통해 자신의 미래를 준비하는 공간
             </span>
@@ -147,7 +147,7 @@ function AboutUs() {
         </div>
       </div>
 
-      <div className="w-full bg-white  text-4xl font-extrabold p-10 text-center text-black">
+      <div className="w-full bg-black  text-4xl font-extrabold p-10 text-center text-white">
         Our Teams
       </div>
 
