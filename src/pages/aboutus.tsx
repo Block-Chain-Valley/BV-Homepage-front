@@ -33,7 +33,7 @@ function AboutUs() {
   return (
     <main className="flex flex-col items-center justify-center text-white bg-black ">
       <SEO
-        title="블록체인 밸리"
+        title="About Us Page"
         description="블록체인 밸리는 고려대학교 유일의 블록체인 학회입니다. 블록체인과 크립토 그리고 WEB 3.0에 대한 관심과 열정이 있다면 블록체인 밸리의 노드가 될 수 있습니다."
       />
 
@@ -101,48 +101,51 @@ function AboutUs() {
           </div>
         </div>
 
-        <div className="bg-gray-300 h-100 text-black text-center pt-20 text-4xl font-extrabold">
-          <span>Activities</span>
-        </div>
-        <div className="bg-gray-300  h-100 pl-10 text-black text-center font-bold text-2xl p-10 ">
-          2022.03 - 2022.08
-        </div>
-        <div className="flex justify-center">
-          <div className="bg-gray-300 pl-[30%] text-bold text-black text-lg pb-10 w-full leading-9">
-            <li>10명의 개발팀과 9명의 리서치팀, 총 19명이 노드로 활동</li>
-            <li>
-              산업의 이해도를 높이기 위한 다양한 외부 기업과 강연, 리서치 등
-              산학협력 진행
-            </li>
-            <li>
-              고려대학교 주변 대학 소속 블록체인 학회들과의 연합 행사 주최
-            </li>
-            <li>
-              타 학회 주관 세션 참여, KBW(Korea Blockchain Week) 등 컨퍼런스
-              참여
-            </li>
-            <li>
-              고려대학교 블록체인 대학원과 함께 진행한 아이코어 사업에 통과,
-              미국 캘리포니아에서 창업 지원 교육을 이수
-            </li>
+        <div className="flex flex-col w-full bg-gray-300 ">
+          <div className="bg-gray-300 h-100 text-black text-center pt-20 text-4xl font-extrabold">
+            <span>Activities</span>
           </div>
-        </div>
+          <div className="bg-gray-300  h-100 pl-10 text-black text-center font-bold text-2xl p-10 ">
+            2022.03 - 2022.08
+          </div>
+          <div className="flex justify-center mr-10 max-w-3xl">
+            <div className="bg-gray-300 pl-[30%] max-md:pl-14 text-bold text-black text-lg pb-10 w-full leading-9">
+              <li>10명의 개발팀과 9명의 리서치팀, 총 19명이 노드로 활동</li>
+              <li>
+                산업의 이해도를 높이기 위한 다양한 외부 기업과 강연, 리서치 등
+                산학협력 진행
+              </li>
+              <li>
+                고려대학교 주변 대학 소속 블록체인 학회들과의 연합 행사 주최
+              </li>
+              <li>
+                타 학회 주관 세션 참여, KBW(Korea Blockchain Week) 등 컨퍼런스
+                참여
+              </li>
+              <li>
+                고려대학교 블록체인 대학원과 함께 진행한 아이코어 사업에 통과,
+                미국 캘리포니아에서 창업 지원 교육을 이수
+              </li>
+            </div>
+          </div>
 
-        <div className="bg-gray-300  h-100 pl-10 text-black text-center font-bold text-2xl p-10 ">
-          2022.08 - 2023.02
-        </div>
-        <div className="flex justify-center">
-          <div className="bg-gray-300 pl-[30%] text-bold text-black text-lg pb-10 w-full leading-9 pb-20">
-            <li>베인 x 쟁글 특별 공개 강연</li>
-            <li>고연전 NFT 프로젝트 &apos;버미와 수리&apos; 진행</li>
-            <li>
-              드림플러스 블록체인 해커톤 메타마스크 Snap 활용 트랜잭션 보안
-              서비스로 &apos;안랩블록체인컴퍼니상&apos; 수상
-            </li>
-            <li>Korea Blockchain Academy Conference(KOBAC) 주최 </li>
-            <li>
-              필로소피아벤처스와 업무협약 체결 - 안암 라운지 및 다양한 지원 제공
-            </li>
+          <div className="bg-gray-300  h-100 pl-10 text-black text-center font-bold text-2xl p-10 ">
+            2022.08 - 2023.02
+          </div>
+          <div className="flex justify-center mr-10 max-w-3xl">
+            <div className="bg-gray-300 pl-[30%] max-md:pl-14 text-bold text-black text-lg pb-10 w-full leading-9">
+              <li>베인 x 쟁글 특별 공개 강연</li>
+              <li>고연전 NFT 프로젝트 &apos;버미와 수리&apos; 진행</li>
+              <li>
+                드림플러스 블록체인 해커톤 메타마스크 Snap 활용 트랜잭션 보안
+                서비스로 &apos;안랩블록체인컴퍼니상&apos; 수상
+              </li>
+              <li>Korea Blockchain Academy Conference(KOBAC) 주최 </li>
+              <li>
+                필로소피아벤처스와 업무협약 체결 - 안암 라운지 및 다양한 지원
+                제공
+              </li>
+            </div>
           </div>
         </div>
       </div>
@@ -152,7 +155,7 @@ function AboutUs() {
       </div>
 
       <div className="flex items-center justify-center w-full">
-        <div className="flex flex-row w-full">
+        <div className="flex flex-row w-full max-md:flex-col">
           <div className="flex flex-grow">
             <div
               className="text-center pl-10 pr-10 w-full h-full relative"

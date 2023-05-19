@@ -22,23 +22,44 @@ interface SwiperProps {
   };
 }
 
-export default function App({ images, title, url }: { images: string[], title: string[], url: string[] }) {
+export default function App({
+  images,
+  title,
+  url,
+}: {
+  images: string[];
+  title: string[];
+  url: string[];
+}) {
   const swiperStyle: SwiperProps["style"] = {
     width: "100%",
     height: "100%",
-    backgroundColor: "black",
-    color: "white",
-    "--swiper-pagination-color": "red",
-    "--swiper-pagination-bullet-inactive-color": "white",
+    backgroundColor: "white",
+    color: "black",
+    "--swiper-pagination-color": "#991b1b",
+    "--swiper-pagination-bullet-inactive-color": "grey",
     "--swiper-pagination-bullet-inactive-opacity": "0.5",
     "--swiper-pagination-bullet-size": "10px",
     "--swiper-pagination-bullet-horizontal-gap": "5px",
   };
 
+  const isMobile = window.innerWidth <= 768; // Check if the device is mobile
+
+  const swiperParams = {
+    slidesPerView: isMobile ? "auto" : 3, // Show 1 slide on mobile, 3 slides on other devices
+    spaceBetween: 15,
+    pagination: {
+      clickable: true,
+    },
+    modules: [Pagination],
+    className: "mySwiper",
+    style: swiperStyle,
+  };
+
   return (
     <>
       <Swiper
-        slidesPerView={3}
+        slidesPerView={isMobile ? "auto" : 3}
         spaceBetween={15}
         pagination={{
           clickable: true,
@@ -50,20 +71,23 @@ export default function App({ images, title, url }: { images: string[], title: s
         {images.map((image, index) => (
           <SwiperSlide
             key={index}
-            style={{ display: "flex", backgroundColor: "black" }}
-            className="flex justify-center items-center mb-8 bg-black"
+            style={{ display: "flex flex-col" }}
+            className="flex justify-center items-center mb-8 "
           >
-            <a href={url[index]}>
-              <Image
-                src={image}
-                alt="Picture of the author"
-                width={128}
-                height={128}
-              />
+            <div className="flex flex-col m-4 items-center">
+              <a href={url[index]}>
+                <Image
+                  src={image}
+                  alt="Picture of the author"
+                  width={256}
+                  height={256}
+                />
+              </a>
 
-            </a>
-
-            <div>{title}</div>
+              <div className=" mt-4 text-center font-semibold">
+                {title[index]}
+              </div>
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>

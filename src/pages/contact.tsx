@@ -3,16 +3,14 @@ import { SEO } from "@/seo/SEO";
 import { IoCall } from "react-icons/io5";
 import { HiLocationMarker } from "react-icons/hi";
 import { MdEmail } from "react-icons/md";
-import Navbar from "../components/Navbar";
-import Link from "next/link";
-import Image from "next/image";
 
 function Contact() {
   return (
-    <main className="flex flex-col  items-center w-full justify-center bg-black text-white ">
+    <main className="flex flex-col  items-center justify-center bg-black text-white ">
       <SEO
-        title="문의 페이지"
-        description="문의 사항을 보낼 수 있는 페이지입니다."
+        title="Contact page"
+        description="블록체인밸리와의 파트너십 및 협력 혹은 요청 사항이 있으시다면
+    언제든지 편하게 연락주세요"
       />
       {/* <div className="absolute top-5 left-5 w-full bg-none flex items-center justify-between p-5">
         <Link href="/">
@@ -26,12 +24,17 @@ function Contact() {
         <Navbar />
       </div> */}
 
-      <div className="flex flex-col items-center  mt-24 w-full ">
-        <div className="animate-fadeIn mt-24 text-4xl max-w-3xl font-bold text-800 max-md:text-2xl max-md:text-center max-md:max-w-xl ">
+      <div
+        className="flex flex-col items-center  mt-24 w-full bg-cover bg-no-repeat bg-center"
+        style={{ backgroundImage: "url('/contactback.jpg')", height: "100vh" }}
+      >
+        <div className="animate-fadeIn mt-24 text-4xl max-w-3xl font-bold max-md:mt-48  max-md:text-2xl max-md:text-center max-md:max-w-xl ">
           WEB3의 진정한 가치를 학습하는 공간
-          <br /> 블록체인밸리입니다. <br />
+          <br />
+          <span className="text-900">블록체인 밸리</span> 입니다
+          <br />
           블록체인밸리와의 파트너십 및 협력 혹은 요청 사항이 있으시다면
-          <br /> 언제든지 편하게 연락주세요.
+          <br /> 언제든지 편하게 연락주세요
         </div>
       </div>
 
@@ -42,7 +45,7 @@ function Contact() {
         <div className="flex flex-col items-center">
           <EmailBox />
 
-          <div className="flex mt-10 max-md:flex-col ">
+          <div className="flex mt-10 max-md:flex-col mb-24 ">
             <div className="flex text-xl mr-4  justify-center items-center">
               <IoCall />
               010-8940-7209
