@@ -17,6 +17,7 @@
 }
 
 body {
+  word-break: keep-all;
   /*   
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(

@@ -61,7 +61,7 @@ const EmailBox = () => {
               name="user_name"
               value={name}
               onChange={onChangeName}
-              className=" w-20 border-2 border-black rounded-md mr-2 text-black"
+              className=" w-20 max-md:w-80 border-2 border-black rounded-md mr-2 text-black"
             />
           </div>
 
@@ -76,7 +76,7 @@ const EmailBox = () => {
               name="user_email"
               value={email}
               onChange={onChangeEmail}
-              className="border-2 border-black rounded-md text-black"
+              className="border-2 border-black rounded-md text-black max-md:w-80"
             />
           </div>
         </div>
