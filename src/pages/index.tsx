@@ -108,8 +108,8 @@ export default function Home() {
 
   const getPosts = async () => {
     try {
-      //const posts = await mediumAPI.getPosts();
-      const posts = dummyposts;
+      const posts = await mediumAPI.getPosts();
+      //const posts = dummyposts;
       setPost(posts);
       setPostImages(posts.map((post) => post.imgSrc));
       setPostTitles(posts.map((post) => post.title));

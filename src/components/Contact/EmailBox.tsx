@@ -43,45 +43,52 @@ const EmailBox = () => {
   };
 
   return (
-    <div className="flex items-center">
+    <div className="flex items-center ">
       <form
         ref={form}
         onSubmit={sendEmail}
-        className="flex flex-col md:items-center"
+        className="flex flex-col  md:items-center"
       >
         <div className="flex max-md:flex-col">
-          <div>
-            <label htmlFor="name" className=" text-xl font-bold mr-2 ">
-              Name
-            </label>
-
-            <input
-              type="lineText"
-              id="name"
-              name="user_name"
-              value={name}
-              onChange={onChangeName}
-              className=" w-20 max-md:w-80 border-2 border-black rounded-md mr-2 text-black"
-            />
+          <div className=" max-md:w-120 flex max-md:justify-between">
+            <div className="mr-2">
+              <label htmlFor="name" className=" text-xl font-bold ">
+                Name
+              </label>
+            </div>
+            <div>
+              <input
+                type="lineText"
+                id="name"
+                name="user_name"
+                value={name}
+                onChange={onChangeName}
+                className="border-2 border-black rounded-md md:mr-2 max-md:m-0 text-black max-md:w-80"
+              />
+            </div>
           </div>
 
-          <div>
-            <label htmlFor="email" className=" text-xl font-bold mr-2 ">
-              Email
-            </label>
+          <div className="max-md:w-120 flex max-md:justify-between">
+            <div className="mr-2">
+              <label htmlFor="email" className=" text-xl font-bold ">
+                Email
+              </label>
+            </div>
 
-            <input
-              type="email"
-              id="email"
-              name="user_email"
-              value={email}
-              onChange={onChangeEmail}
-              className="border-2 border-black rounded-md text-black max-md:w-80"
-            />
+            <div>
+              <input
+                type="email"
+                id="email"
+                name="user_email"
+                value={email}
+                onChange={onChangeEmail}
+                className="border-2 border-black rounded-md md:mr-2 max-md:m-0 text-black max-md:w-80"
+              />
+            </div>
           </div>
         </div>
-        <div className="flex flex-col">
-          <label htmlFor="message" className=" text-xl font-bold mt-2 ">
+        <div className="flex flex-col justify-center items-center">
+          <label htmlFor="message" className=" text-3xl font-bold mt-2 mb-2">
             Message
           </label>
           <textarea
@@ -89,14 +96,14 @@ const EmailBox = () => {
             name="lineText"
             value={lineText}
             onChange={onChangeLineText}
-            className="border-2 border-black rounded-md text-black w-80  h-40"
+            className="border-2 border-black rounded-md text-black w-96  h-40"
           />
         </div>
         <input
           type="submit"
           name="Send"
           value="Send"
-          className="border-2 mt-5 border-white w-80 h-10 rounded-md bg-black text-white"
+          className="border-2 m-auto mt-4 border-white w-80 h-10 rounded-md bg-black text-white"
         />
       </form>
     </div>
