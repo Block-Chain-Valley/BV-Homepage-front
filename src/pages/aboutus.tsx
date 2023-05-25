@@ -109,7 +109,7 @@ function AboutUs() {
             2022.03 - 2022.08
           </div>
           <div className="flex justify-center mr-10 max-w-3xl">
-            <div className="bg-gray-300 pl-[30%] max-md:pl-14 text-bold text-black text-lg pb-10 w-full leading-9">
+            <div className="text-center bg-gray-300 pl-[30%] max-md:pl-14 text-bold text-black text-lg pb-10 w-full leading-9">
               <li>10명의 개발팀과 9명의 리서치팀, 총 19명이 노드로 활동</li>
               <li>
                 산업의 이해도를 높이기 위한 다양한 외부 기업과 강연, 리서치 등
@@ -133,7 +133,7 @@ function AboutUs() {
             2022.08 - 2023.02
           </div>
           <div className="flex justify-center mr-10 max-w-3xl">
-            <div className="bg-gray-300 pl-[30%] max-md:pl-14 text-bold text-black text-lg pb-10 w-full leading-9">
+            <div className="text-center bg-gray-300 pl-[30%] max-md:pl-14 text-bold text-black text-lg pb-10 w-full leading-9">
               <li>베인 x 쟁글 특별 공개 강연</li>
               <li>고연전 NFT 프로젝트 &apos;버미와 수리&apos; 진행</li>
               <li>
