@@ -76,11 +76,10 @@ export default function App({
           >
             <div className="flex flex-col m-4 items-center">
               <a href={url[index]}>
-                <Image
+                <img
                   src={image}
                   alt="Picture of the author"
-                  width={256}
-                  height={256}
+                  className="w-64  object-cover"
                 />
               </a>
 
